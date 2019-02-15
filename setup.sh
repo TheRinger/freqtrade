@@ -175,22 +175,22 @@ function config_generator() {
     echo "Generating exchange config "
     echo "------------------------"
     default_api_key=$binance_api_secret
-    read -p "Exchange API key: " api_key
+    read -p "Exchange API key: (Default: $default_api_key) " api_key
     api_key=${api_key:-$default_api_key}
     
-    default_api_key=$binance_api_secret
-    read -p "Exchange API Secret: " api_secret
+    default_api_secret=$binance_api_secret
+    read -p "Exchange API Secret: (Default: $default_api_secret) " api_secret
     api_secret=${api_secret:-$default_api_secret}
 
     echo
     echo "Generating Telegram config"
     echo "-------------------------"
     default_telegram_token=$telegram_token
-    read -p "Telegram Token: " token
+    read -p "Telegram Token: (Default: $default_telegram_token) " token
     token=${token:-$default_telegram_token}
 
     default_telegram_chat_id=$telegram_chat_id
-    read -p "Telegram Chat_id: " chat_id
+    read -p "Telegram Chat_id: Default: $default_telegram_chat_id) " chat_id
     chat_id=${chat_id:-$default_telegram_chat_id}
 
     sed -e "s/\"max_open_trades\": 3,/\"max_open_trades\": $max_trades,/g" \
