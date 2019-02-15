@@ -3,7 +3,8 @@
 function pflag() {
 PYTHON=python3.6
 P3=python3.6
-install
+return
+#install
 }
 
 
