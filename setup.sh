@@ -174,7 +174,7 @@ function config_generator() {
     echo
     echo "Generating exchange config "
     echo "------------------------"
-    default_api_key=$binance_api_secret
+    default_api_key=$binance_api_key
     read -p "Exchange API key: (Default: $default_api_key) " api_key
     api_key=${api_key:-$default_api_key}
     
