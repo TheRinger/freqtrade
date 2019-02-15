@@ -3,21 +3,21 @@
     "stake_currency": "BTC",
     "stake_amount": 0.05,
     "fiat_display_currency": "USD",
-    "dry_run": false,
+    "dry_run": true,
     "ticker_interval": "5m",
-    "trailing_stop": false,
-    "trailing_stop_positive": 0.005,
-    "trailing_stop_positive_offset": 0.0051,
+    "trailing_stop": true,
+    "trailing_stop_positive": 0.015,
+    "trailing_stop_positive_offset": 0.0025,
     "minimal_roi": {
         "40":  0.0,
         "30":  0.01,
         "20":  0.02,
         "0":  0.04
     },
-    "stoploss": -0.10,
+    "stoploss": -0.05,
     "unfilledtimeout": {
         "buy": 10,
-        "sell": 30
+        "sell": 15
     },
     "bid_strategy": {
         "ask_last_balance": 0.0,
@@ -52,7 +52,7 @@
         }
     },
     "exchange": {
-        "name": "bittrex",
+        "name": "exchange_name",
         "key": "your_exchange_key",
         "secret": "your_exchange_secret",
         "ccxt_config": {"enableRateLimit": true},
@@ -93,8 +93,8 @@
         "remove_pumps": false
     },
     "experimental": {
-        "use_sell_signal": false,
-        "sell_profit_only": false,
+        "use_sell_signal": true,
+        "sell_profit_only": true,
         "ignore_roi_if_buy_signal": false
     },
     "telegram": {
@@ -109,5 +109,5 @@
         "process_throttle_secs": 5
     },
     "strategy": "DefaultStrategy",
-    "strategy_path": "/some/folder/"
+    "strategy_path": "user_data/strategies/"
 }

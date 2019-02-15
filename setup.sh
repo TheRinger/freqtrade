@@ -174,6 +174,10 @@ function config_generator() {
     echo
     echo "Generating exchange config "
     echo "------------------------"
+    default_exchange_name="binance"
+    read -p "Exchange Name: (Default: $default_exchange_name) " exchange_name
+    exchange_name=${exchange_name:-$default_exchange_name}
+
     default_api_key=$binance_api_key
     read -p "Exchange API key: (Default: $default_api_key) " api_key
     api_key=${api_key:-$default_api_key}
@@ -197,11 +201,12 @@ function config_generator() {
         -e "s/\"stake_amount\": 0.05,/\"stake_amount\": $stake_amount,/g" \
         -e "s/\"stake_currency\": \"BTC\",/\"stake_currency\": \"$stake_currency\",/g" \
         -e "s/\"fiat_display_currency\": \"USD\",/\"fiat_display_currency\": \"$fiat_currency\",/g" \
+        -e "s/\"exchange_name\"/\"$exchange_name\"/g" \
         -e "s/\"your_exchange_key\"/\"$api_key\"/g" \
         -e "s/\"your_exchange_secret\"/\"$api_secret\"/g" \
         -e "s/\"your_telegram_token\"/\"$token\"/g" \
         -e "s/\"your_telegram_chat_id\"/\"$chat_id\"/g" \
-        -e "s/\"dry_run\": false,/\"dry_run\": true,/g" config.json.example > config.json
+        -e "s/\"dry_run\": false,/\"dry_run\": true,/g" config_binance.json.example > config.json
 
 }
 
