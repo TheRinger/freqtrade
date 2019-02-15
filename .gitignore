@@ -92,3 +92,16 @@ target/
 
 .pytest_cache/
 .mypy_cache/
+bin/pip
+bin/pip3
+bin/pip3.6
+bin/python
+bin/python3
+bin/python3.6
+bin/activate
+bin/easy_install
+bin/easy_install-3.6
+bin/wheel
+lib64
+pyvenv.cfg
+share
